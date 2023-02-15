@@ -59,7 +59,7 @@ in ng/tsconfig.json
       ],
       "gongsvgspecific": [
         "../vendor/github.com/fullstack-lang/gongsvg/ng/projects/gongsvgspecific/src/public-api.ts"
-      ]
+      ],
 ```
 
 ### Add a tab to the generated application
