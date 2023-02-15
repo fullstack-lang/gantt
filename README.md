@@ -72,18 +72,17 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+
   view = 'Gantt view'
   gantt = 'Gantt view'
-  data_gantt = 'Data gantt view'
+  default = 'Data gantt view'
   meta = 'Meta view'
   data_svg = 'Data svg view'
-  uml_view = 'Uml view'
-  
-  views: string[] = [this.gantt, this.data_gantt, this.data_svg, this.uml_view, this.meta];
+  diagrams = 'Uml view'
+
+  views: string[] = [this.gantt, this.default, this.data_svg, this.diagrams, this.meta];
 }
 ```
 
@@ -93,7 +92,7 @@ add the following elemets at the beginning of the file
 
 ```html
 <as-split *ngIf="view==gantt" direction="vertical">
-    <as-split-area size="05">
+    <as-split-area [size]=05>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <mat-radio-group aria-label="Select an option" [(ngModel)]="view">
             <mat-radio-button *ngFor="let view of views" [value]="view">
@@ -101,27 +100,13 @@ add the following elemets at the beginning of the file
             </mat-radio-button>
         </mat-radio-group>
     </as-split-area>
-    <as-split-area size="95">
+    <as-split-area [size]=95>
         <lib-svg></lib-svg>
     </as-split-area>
 </as-split>
 
-<as-split *ngIf="view==data_gantt" direction="vertical">
-    <as-split-area size="05">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <mat-radio-group aria-label="Select an option" [(ngModel)]="view">
-            <mat-radio-button *ngFor="let view of views" [value]="view">
-                {{view}}&nbsp;&nbsp;&nbsp;
-            </mat-radio-button>
-        </mat-radio-group>
-    </as-split-area>
-    <as-split-area size="95">
-        <app-gantt-splitter></app-gantt-splitter>
-    </as-split-area>
-</as-split>
-
 <as-split *ngIf="view==data_svg" direction="vertical">
-    <as-split-area size="05">
+    <as-split-area [size]=05>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <mat-radio-group aria-label="Select an option" [(ngModel)]="view">
             <mat-radio-button *ngFor="let view of views" [value]="view">
@@ -129,36 +114,8 @@ add the following elemets at the beginning of the file
             </mat-radio-button>
         </mat-radio-group>
     </as-split-area>
-    <as-split-area size="95">
+    <as-split-area [size]=95>
         <app-gongsvg-splitter></app-gongsvg-splitter>
-    </as-split-area>
-</as-split>
-
-<as-split *ngIf="view==uml_view" direction="vertical">
-    <as-split-area size="05">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <mat-radio-group aria-label="Select an option" [(ngModel)]="view">
-            <mat-radio-button *ngFor="let view of views" [value]="view">
-                {{view}}&nbsp;&nbsp;&nbsp;
-            </mat-radio-button>
-        </mat-radio-group>
-    </as-split-area>
-    <as-split-area size="95">
-        <lib-pkgelt-docs></lib-pkgelt-docs>
-    </as-split-area>
-</as-split>
-
-<as-split *ngIf="view==meta" direction="vertical">
-    <as-split-area size="05">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <mat-radio-group aria-label="Select an option" [(ngModel)]="view">
-            <mat-radio-button *ngFor="let view of views" [value]="view">
-                {{view}}&nbsp;&nbsp;&nbsp;
-            </mat-radio-button>
-        </mat-radio-group>
-    </as-split-area>
-    <as-split-area size="95">
-        <app-gong-splitter></app-gong-splitter>
     </as-split-area>
 </as-split>
 ```
