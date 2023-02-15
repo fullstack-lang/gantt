@@ -14,7 +14,20 @@
 ```
 git clone https://github.com/fullstack-lang/gantt
 cd gantt
-find gantt2svg models cmd -type f -name "*.go" -exec wc -l {} + | awk '{total += $1} END {print total}'
+find gantt2svg models cmd -name '*.go' -type f -print0 | xargs -0 wc -l
+
+   57 gantt2svg/generate_arrow.go
+  379 gantt2svg/generate_svg.go
+   11 models/arrow.go
+   16 models/bar.go
+   88 models/gantt.go
+    8 models/group.go
+   15 models/lane.go
+   15 models/milestone.go
+   12 models/note_on_the_model.go
+  165 cmd/gantt/gantt1.go
+  190 cmd/gantt/main.go
+  956 total
 ```
 
 ## generate the application
