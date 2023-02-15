@@ -6,7 +6,7 @@ import (
 	"github.com/fullstack-lang/gongdoc/go/models"
 
 	// injection point for ident package import declaration
-	ref_models "github.com/fullstack-lang/gonggantt/go/models"
+	ref_models "github.com/fullstack-lang/gantt/go/models"
 )
 
 // generated in order to avoid error in the package import
@@ -217,7 +217,7 @@ func NewDiagramInjection() {
 
 	// Field values setup
 	__Field__000000_End.Name = `End`
-	
+
 	// comment added to overcome the problem with the comment map association
 
 	//gong:ident [ref_models.Bar.End]
@@ -228,7 +228,7 @@ func NewDiagramInjection() {
 
 	// Field values setup
 	__Field__000001_Name.Name = `Name`
-	
+
 	// comment added to overcome the problem with the comment map association
 
 	//gong:ident [ref_models.Bar.Name]
@@ -239,7 +239,7 @@ func NewDiagramInjection() {
 
 	// Field values setup
 	__Field__000002_Order.Name = `Order`
-	
+
 	// comment added to overcome the problem with the comment map association
 
 	//gong:ident [ref_models.Lane.Order]
@@ -250,7 +250,7 @@ func NewDiagramInjection() {
 
 	// Field values setup
 	__Field__000003_Start.Name = `Start`
-	
+
 	// comment added to overcome the problem with the comment map association
 
 	//gong:ident [ref_models.Bar.Start]
@@ -261,7 +261,7 @@ func NewDiagramInjection() {
 
 	// GongStructShape values setup
 	__GongStructShape__000000_NewDiagram_Bar.Name = `NewDiagram-Bar`
-	
+
 	// comment added to overcome the problem with the comment map association
 
 	//gong:ident [ref_models.Bar]
@@ -274,7 +274,7 @@ func NewDiagramInjection() {
 
 	// GongStructShape values setup
 	__GongStructShape__000001_NewDiagram_Gantt.Name = `NewDiagram-Gantt`
-	
+
 	// comment added to overcome the problem with the comment map association
 
 	//gong:ident [ref_models.Gantt]
@@ -287,7 +287,7 @@ func NewDiagramInjection() {
 
 	// GongStructShape values setup
 	__GongStructShape__000002_NewDiagram_Lane.Name = `NewDiagram-Lane`
-	
+
 	// comment added to overcome the problem with the comment map association
 
 	//gong:ident [ref_models.Lane]
@@ -300,7 +300,7 @@ func NewDiagramInjection() {
 
 	// Link values setup
 	__Link__000000_Bars.Name = `Bars`
-	
+
 	// comment added to overcome the problem with the comment map association
 
 	//gong:ident [ref_models.Lane.Bars]
@@ -311,7 +311,7 @@ func NewDiagramInjection() {
 
 	// Link values setup
 	__Link__000001_Lanes.Name = `Lanes`
-	
+
 	// comment added to overcome the problem with the comment map association
 
 	//gong:ident [ref_models.Gantt.Lanes]
@@ -322,7 +322,7 @@ func NewDiagramInjection() {
 
 	// NoteShape values setup
 	__NoteShape__000000_NoteOnTheModel.Name = `NoteOnTheModel`
-	
+
 	// comment added to overcome the problem with the comment map association
 
 	//gong:ident [ref_models.NoteOnTheModel]
@@ -345,7 +345,7 @@ A task is displayed as a bar ([models.Bar]) with a start and end date
 
 	// NoteShapeLink values setup
 	__NoteShapeLink__000000_Bar.Name = `Bar`
-	
+
 	// comment added to overcome the problem with the comment map association
 
 	//gong:ident [ref_models.Bar]
@@ -354,7 +354,7 @@ A task is displayed as a bar ([models.Bar]) with a start and end date
 
 	// NoteShapeLink values setup
 	__NoteShapeLink__000001_Gantt.Name = `Gantt`
-	
+
 	// comment added to overcome the problem with the comment map association
 
 	//gong:ident [ref_models.Gantt]
@@ -363,7 +363,7 @@ A task is displayed as a bar ([models.Bar]) with a start and end date
 
 	// NoteShapeLink values setup
 	__NoteShapeLink__000002_Lane.Name = `Lane`
-	
+
 	// comment added to overcome the problem with the comment map association
 
 	//gong:ident [ref_models.Lane]
@@ -415,5 +415,3 @@ A task is displayed as a bar ([models.Bar]) with a start and end date
 	__NoteShape__000000_NoteOnTheModel.NoteShapeLinks = append(__NoteShape__000000_NoteOnTheModel.NoteShapeLinks, __NoteShapeLink__000001_Gantt)
 	__NoteShape__000000_NoteOnTheModel.NoteShapeLinks = append(__NoteShape__000000_NoteOnTheModel.NoteShapeLinks, __NoteShapeLink__000002_Lane)
 }
-
-

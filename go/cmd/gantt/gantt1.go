@@ -3,8 +3,7 @@ package main
 import (
 	"time"
 
-	"github.com/fullstack-lang/gonggantt/go/models"
-
+	"github.com/fullstack-lang/gantt/go/models"
 	// injection point for ident package import declaration{{ImportPackageDeclaration}}
 )
 
@@ -164,5 +163,3 @@ func gantt1Injection() {
 	__Lane__000001_Lane_2.Bars = append(__Lane__000001_Lane_2.Bars, __Bar__000002_Bar_3)
 	__Lane__000002_Lane_3.Bars = append(__Lane__000002_Lane_3.Bars, __Bar__000003_Bar_4)
 }
-
-

@@ -49,8 +49,8 @@ import { GongsvgspecificModule } from 'gongsvgspecific'
 in ng/tsconfig.json
 
 ```json
-      "gonggantt": [
-        "projects/gonggantt/src/public-api.ts"
+      "gantt": [
+        "projects/gantt/src/public-api.ts"
       ],
 
       // add the following import path
@@ -116,7 +116,7 @@ add the following elemets at the beginning of the file
         </mat-radio-group>
     </as-split-area>
     <as-split-area size="95">
-        <app-gonggantt-splitter></app-gonggantt-splitter>
+        <app-gantt-splitter></app-gantt-splitter>
     </as-split-area>
 </as-split>
 

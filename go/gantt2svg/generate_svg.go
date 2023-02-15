@@ -7,7 +7,7 @@ import (
 	"sort"
 	"time"
 
-	gonggantt_models "github.com/fullstack-lang/gonggantt/go/models"
+	gantt_models "github.com/fullstack-lang/gantt/go/models"
 
 	gongsvg_models "github.com/fullstack-lang/gongsvg/go/models"
 )
@@ -19,20 +19,20 @@ type GanttToSVGTranformer struct {
 
 var GanttToSVGTranformerSingloton GanttToSVGTranformer
 
-func (GanttToSVGTranformer *GanttToSVGTranformer) GenerateSvg(stage *gonggantt_models.StageStruct) {
+func (GanttToSVGTranformer *GanttToSVGTranformer) GenerateSvg(stage *gantt_models.StageStruct) {
 
 	// remove all gongsvg stage/repo
 	gongsvg_models.Stage.Checkout()
 	gongsvg_models.Stage.Reset()
 	gongsvg_models.Stage.Commit()
 
-	if len(*gonggantt_models.GetGongstructInstancesSet[gonggantt_models.Gantt]()) != 1 {
+	if len(*gantt_models.GetGongstructInstancesSet[gantt_models.Gantt]()) != 1 {
 		log.Printf("It is supposed to have only one gantt chart")
 		return
 	}
 
-	var ganttToRender *gonggantt_models.Gantt
-	for gantt := range *gonggantt_models.GetGongstructInstancesSet[gonggantt_models.Gantt]() {
+	var ganttToRender *gantt_models.Gantt
+	for gantt := range *gantt_models.GetGongstructInstancesSet[gantt_models.Gantt]() {
 		ganttToRender = gantt
 	}
 	ganttToRender.ComputeStartAndEndDate()
@@ -52,7 +52,7 @@ func (GanttToSVGTranformer *GanttToSVGTranformer) GenerateSvg(stage *gonggantt_m
 	RatioBarToLaneHeight := ganttToRender.RatioBarToLaneHeight
 	barHeigth := LaneHeight * RatioBarToLaneHeight
 	YTopMargin := ganttToRender.YTopMargin
-	yTimeLine := LaneHeight*float64(len(*gonggantt_models.GetGongstructInstancesSet[gonggantt_models.Lane]())) + YTopMargin
+	yTimeLine := LaneHeight*float64(len(*gantt_models.GetGongstructInstancesSet[gantt_models.Lane]())) + YTopMargin
 
 	XLeftText := ganttToRender.XLeftText
 	TextHeight := ganttToRender.TextHeight
@@ -123,8 +123,8 @@ func (GanttToSVGTranformer *GanttToSVGTranformer) GenerateSvg(stage *gonggantt_m
 	//
 	currentY := YTopMargin
 
-	mapLane_TextY := make(map[*gonggantt_models.Lane]float64, 0)
-	mapLane_TopY := make(map[*gonggantt_models.Lane]float64, 0)
+	mapLane_TextY := make(map[*gantt_models.Lane]float64, 0)
+	mapLane_TopY := make(map[*gantt_models.Lane]float64, 0)
 
 	//
 	// Sort Lanes according to the Order
@@ -136,7 +136,7 @@ func (GanttToSVGTranformer *GanttToSVGTranformer) GenerateSvg(stage *gonggantt_m
 	laneIndex := 0
 
 	// prepare a map of bar to barSVG
-	mapBar_BarSVG := make(map[*gonggantt_models.Bar]*gongsvg_models.Rect)
+	mapBar_BarSVG := make(map[*gantt_models.Bar]*gongsvg_models.Rect)
 	for _, lane := range ganttToRender.Lanes {
 
 		laneSVG := new(gongsvg_models.Rect).Stage()
@@ -177,7 +177,7 @@ func (GanttToSVGTranformer *GanttToSVGTranformer) GenerateSvg(stage *gonggantt_m
 			svg.Rects = append(svg.Rects, barSVG)
 			barSVG.Name = bar.Name
 
-			var barToDisplay gonggantt_models.Bar
+			var barToDisplay gantt_models.Bar
 			barToDisplay = *bar
 
 			// if start and end dates of the gantt are set manualy, then
