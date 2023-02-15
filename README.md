@@ -139,5 +139,7 @@ then navigate to the display of the UML diagram by clicking on the `Diagrams vie
 
 You should see
 
-<img width="762" src="./uml.png">
+<img width="500" src="./gantt.png">
+
+<img width="800" src="./uml.png">
 
