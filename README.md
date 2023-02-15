@@ -9,12 +9,17 @@
 - [ ] vscode (>= 1.75)
 - [ ] gopls >= 0.37
 
-
-## generate the application
+## count the number of go lines of code
 
 ```
 git clone https://github.com/fullstack-lang/gantt
 cd gantt
+find gantt2svg models cmd -type f -name "*.go" -exec wc -l {} + | awk '{total += $1} END {print total}'
+```
+
+## generate the application
+
+```
 npm install -g @angular/cli@15
 go install github.com/fullstack-lang/gong/go/cmd/gongc
 gongc go/models
