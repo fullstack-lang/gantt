@@ -34,7 +34,7 @@ find gantt2svg models cmd -name '*.go' -type f -print0 | xargs -0 wc -l
 
 ```
 npm install -g @angular/cli@15
-go install github.com/fullstack-lang/gong/go/cmd/gongc
+go install github.com/fullstack-lang/gong/go/cmd/gongc@gantt_example_generation
 gongc go/models
 ```
 
