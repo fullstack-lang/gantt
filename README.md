@@ -151,7 +151,11 @@ cd go/cmd/gantt
 
 ## navigating to the application
 
-with a navigator (for unknown reasons, it does not work with firefox on mac), navigate to http://localhost:8080/.
+navigate to http://localhost:8080/. 
+
+> If you are use Chrome on mac, you need to creates an artifical adress like `mymac`
+on `etc/host` (see https://stackoverflow.com/questions/10883211/why-does-my-http-localhost-cors-origin-not-work)
+
 
 then navigate to the display of the UML diagram by clicking on the `Diagrams view` then select `New Diagram`.
 
